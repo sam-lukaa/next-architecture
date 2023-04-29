@@ -3,7 +3,6 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import type { Transform, WebStorage } from 'redux-persist';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-
 import AuthReducer from 'application/auth/Auth.slice';
 // reducers import
 
@@ -14,8 +13,8 @@ interface PersitConfig {
 }
 
 const rootReducer = combineReducers({
-  auth: AuthReducer
-  // reducer usage
+  auth: AuthReducer,
+// reducer usage
 });
 
 export const persistConfig: PersitConfig = {

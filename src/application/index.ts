@@ -1,2 +1,2 @@
-export * from './Auth';
+// export * from './auth';
 // component export

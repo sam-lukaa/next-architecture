@@ -1,20 +1,15 @@
 import Axios from 'axios';
+import { getCookie } from 'cookies-next';
 
-let key: string | undefined = '';
-// check if key exist in cookies
-if (typeof window !== 'undefined') {
-  key = document.cookie
-    .split('; ')
-    .find(row => row.startsWith('cookie_name='))
-    ?.split('=')[1];
-}
+const token: any = getCookie('cookie-name'); //replace cookie-name with your own value
 
 let headers = {};
+
 // conditionally set headers for auth and no-auth
-if (key && key !== '' && key !== 'undefined') {
+if (token) {
   headers = {
     Accept: 'application/json',
-    Authorization: `Bearer ${key}`
+    Authorization: `Bearer ${token}`
   };
 } else {
   headers = {
